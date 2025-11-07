@@ -1,0 +1,130 @@
+@use 'variables' as *;
+@use 'fonts' as *;
+
+// Base styles
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    font-size: $font-size-base;
+}
+
+body {
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 500;
+    background-color: $primary-color;
+    color: #fff;
+}
+
+.section-content {
+    text-align: center;
+    max-width: 837px;
+    margin: 0 auto;
+
+    .section-title {
+        font-size: $font-size-section-title;
+        margin-bottom: 1.5rem;
+    }
+
+    .section-desc {
+        font-size: $font-size-section-desc;
+        font-weight: 500;
+    }
+
+    @media screen and (max-width: $breakpoint-sm) {
+        padding: 0 24px;
+
+        .section-title {
+            font-size: 18px;
+            max-width: 310px;
+            margin: 0 auto 1rem;
+        }
+
+        .section-desc {
+            font-size: 14px;
+        }
+    }
+}
+
+.input-group {
+    display: flex;
+    flex-direction: column;
+
+    input,
+    textarea {
+        background-color: $primary-color;
+        border-radius: 10px;
+        border: 1px solid #cfcfcfa5;
+        font-size: 18px;
+        padding: .5rem;
+        color: #fff;
+        outline: none;
+
+        &::placeholder {
+            color: #CFCFCF;
+        }
+    }
+
+    label {
+        margin-bottom: .5rem;
+        font-size: 18px;
+    }
+
+
+    @media screen and (max-width: $breakpoint-sm) {
+        label {
+            font-size: 12px;
+        }
+
+        input, textarea {
+            font-size: 12px;
+            border-radius: 6px;
+        }
+    }
+}
+
+.row {
+    gap: 1rem;
+    display: flex;
+    flex-wrap: nowrap;
+
+    @for $i from 1 through 12 {
+        &:has(.col:nth-child(#{$i})) {
+            .col {
+                width: calc(100% / #{$i});
+            }
+        }
+    }
+}
+
+h1 {
+    font-size: clamp(38px, 4vw, 48px);
+
+    span {
+        color: $primary-light;
+    }
+}
+
+
+// Container
+.container {
+    margin: 0 auto;
+    padding: 0;
+}
+
+.container {
+    max-width: 1048px;
+    margin: 0 auto;
+}
+
+.d-none {
+    display: none !important;
+}
+
+.card {
+    background-color: $primary-color;
+    border-radius: 12px;
+}

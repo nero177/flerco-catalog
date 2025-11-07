@@ -1,0 +1,9 @@
+<svg width="30" height="30" viewBox="0 0 30 30" fill="none" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+<circle opacity="0.9" cx="15" cy="15" r="15" fill="url(#pattern0_968_1816)"/>
+<defs>
+<pattern id="pattern0_968_1816" patternContentUnits="objectBoundingBox" width="1" height="1">
+<use xlink:href="#image0_968_1816" transform="scale(0.004)"/>
+</pattern>
+<image id="image0_968_1816" width="250" height="250" preserveAspectRatio="none" xlink:href="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAPoAAAD6AgMAAAD1grKuAAAADFBMVEX/1QDtzA0SZK4AW7twu6W+AAAARklEQVR42u3LMQ0AIAADsAX/TniQhgMQMS7S/s2p7JGO7/u+7/u+7/u+7/u+7/u+7/u+7/u+7z/5s7LaHwAAAAAAAAD4wAVgbpPhXZMvgwAAAABJRU5ErkJggg=="/>
+</defs>
+</svg>
