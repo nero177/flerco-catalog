@@ -1,0 +1,55 @@
+version: "3.9"
+
+services:
+  nginx:
+    image: my-nginx:latest
+    ports:
+      - "80:80"
+    configs:
+      - source: docker/nginx.conf
+        target: /etc/nginx/nginx.conf
+    depends_on:
+      - php
+      - node
+    deploy:
+      replicas: 2
+
+  php:
+    image: php-fpm:latest
+    depends_on:
+      - db
+    deploy:
+      replicas: 3
+
+  node:
+    image: my-node-app:latest
+    deploy:
+      replicas: 2
+
+  db:
+    image: mysql:8
+    environment:
+      MYSQL_ROOT_PASSWORD_FILE: /run/secrets/db_root_pass
+      MYSQL_DATABASE: app
+      MYSQL_USER: app
+      MYSQL_PASSWORD_FILE: /run/secrets/db_pass
+    volumes:
+      - db_data:/var/lib/mysql
+    secrets:
+      - db_root_pass
+      - db_pass
+    deploy:
+      replicas: 1
+
+secrets:
+  db_root_pass:
+    external: true
+  db_pass:
+    external: true
+
+configs:
+  nginx_conf:
+    external: true
+
+volumes:
+  db_data:
