@@ -11,8 +11,8 @@
                 {{ $t('banner_section.description') }}
             </p>
             <div class="banner-btns" data-aos="fade-up" data-aos-delay="700">
-                <Button primary>{{ $t('banner_section.learn_more') }}</Button>
-                <Button outline>{{ $t('banner_section.contact_us') }}</Button>
+                <Button primary href="/catalog">{{ $t('banner_section.learn_more') }}</Button>
+                <Button outline href="#contact-us">{{ $t('banner_section.contact_us') }}</Button>
             </div>
         </div>
     </section>
@@ -90,7 +90,12 @@ import Button from '@/Components/Common/Buttons/Button.vue';
         }
 
         .banner-btns {
-            gap: 28px !important;
+            gap: 12px !important;
+            flex-wrap: wrap;
+
+            .btn {
+                padding: 12px 24px;
+            }
         }
     }
 }

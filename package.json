@@ -22,6 +22,8 @@
         "@vue/server-renderer": "^3.5.17",
         "aos": "^2.3.4",
         "pinia": "^3.0.3",
+        "v-viewer": "^3.0.22",
+        "viewerjs": "^1.11.7",
         "vue-i18n": "^11.1.12"
     }
 }

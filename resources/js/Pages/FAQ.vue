@@ -31,7 +31,7 @@
       </div>
       <div class="bottom-part">
         <div class="text-bottom">{{ $t('faq.not_found') }}</div>
-        <Button outline>{{ $t('faq.contact_us') }}</Button>
+        <Button outline href="/#contact-us">{{ $t('faq.contact_us') }}</Button>
       </div>
     </div>
   </FrontendLayout>
@@ -77,7 +77,7 @@ const toggleQuestion = (index) => {
 
 .bg-wrapper {
   position: absolute;
-  height: 2080px;
+  height: 1900px;
   width: 100%;
   overflow: hidden;
   transform: translateY(-10%);

@@ -1,13 +1,15 @@
 <template>
-    <a :href="href" v-if="href" class="btn" :class="{'btn-primary': primary, 'btn-outline': outline}">
-        <slot />
-    </a>
-    <div class="btn" v-else :class="{'btn-primary': primary, 'btn-outline': outline}">
+    <Link :href="href" v-if="href" class="btn" :class="{ 'btn-primary': primary, 'btn-outline': outline }">
+    <slot />
+    </Link>
+    <div class="btn" v-else :class="{ 'btn-primary': primary, 'btn-outline': outline }">
         <slot />
     </div>
 </template>
 <script setup>
-    defineProps({
+import { Link } from '@inertiajs/vue3';
+
+defineProps({
     primary: {
         type: Boolean,
     },

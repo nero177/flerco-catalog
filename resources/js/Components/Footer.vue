@@ -2,22 +2,22 @@
     <footer>
         <div class="footer-inner footer-inner-desk">
             <div class="footer-inner-left">
-                <div class="footer-inner-item" data-aos="fade-up" data-aos-delay="100">
+                <div class="footer-inner-item">
                     {{ $t('footer.questions') }}<br>
                     {{ $t('footer.questions_sub') }}
                 </div>
 
-                <div class="footer-inner-item" data-aos="fade-up" data-aos-delay="300">
+                <div class="footer-inner-item">
                     {{ $t('footer.address') }}<br>
                     ofﬁce@ﬂerco.com
                 </div>
 
-                <div class="footer-inner-item" data-aos="fade-up" data-aos-delay="500">
+                <div class="footer-inner-item">
                     {{ $t('footer.phone') }}<br>
                     {{ $t('footer.phone_username') }}
                 </div>
             </div>
-            <div class="copyright" data-aos="fade-up" data-aos-delay="700">
+            <div class="copyright">
                 {{ $t('footer.copyright') }}<br>
                 {{ $t('footer.copyright_rights') }}
             </div>

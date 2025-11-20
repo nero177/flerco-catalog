@@ -4,6 +4,8 @@ import { createInertiaApp } from '@inertiajs/vue3'
 import i18n from './i18n';
 import 'aos/dist/aos.css'
 import AOS from 'aos'
+import 'viewerjs/dist/viewer.css'
+import VueViewer from 'v-viewer'
 
 const pinia = createPinia()
 
@@ -18,7 +20,8 @@ createInertiaApp({
     app.use(plugin)
     app.use(pinia)
     app.use(i18n);
-
+    app.use(VueViewer)
+    
     AOS.init({
       duration: 800, // animation duration in ms
       once: true,    // whether animation should happen only once

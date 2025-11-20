@@ -7,7 +7,7 @@
         <div class="stats-items">
             <div class="stats-item" data-aos="fade-up" data-aos-delay="100">
                 <img class="stats-item__icon" alt="" src="$/images/icons/medal.svg" />
-                <b class="stats-item__title">16 лет</b>
+                <b class="stats-item__title">16</b>
                 <div class="stats-item__desc">{{ $t('stats.years_on_market') }}</div>
             </div>
             <div class="stats-item" data-aos="fade-up" data-aos-delay="200">
@@ -17,7 +17,7 @@
             </div>
             <div class="stats-item" data-aos="fade-up" data-aos-delay="300">
                 <img class="stats-item__icon" alt="" src="$/images/icons/globe-white.svg" />
-                <b class="stats-item__title">20 стран</b>
+                <b class="stats-item__title">20</b>
                 <div class="stats-item__desc">{{ $t('stats.countries_export') }}</div>
             </div>
             <div class="stats-item" data-aos="fade-up" data-aos-delay="400">

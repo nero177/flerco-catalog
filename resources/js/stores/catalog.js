@@ -41,8 +41,6 @@ export const useCatalogStore = defineStore('catalog', () => {
     }
 
     const selectProductColor = (color) => {
-        // product.value.selectedColors.push(colorIndex);
-        console.log(color)
         if (productOptions.value.colors.map(color => color.id).includes(color.id)) {
             const index = productOptions.value.colors.indexOf(color);
             productOptions.value.colors.splice(index, 1);

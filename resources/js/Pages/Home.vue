@@ -29,7 +29,7 @@ import ContactUs from '@/Components/Home/ContactUs.vue';
 
 .gradient-sides {
     display: flex;
-    height: 3200px;
+    height: 3500px;
     position: absolute;
     top: -405%;
     left: 0;
@@ -60,13 +60,13 @@ import ContactUs from '@/Components/Home/ContactUs.vue';
 
 @media screen and (max-width: 396px) {
     .gradient-sides {
-        top: -358% !important;
+        top: -385% !important;
     }
 }
 
 @media screen and (max-width: $breakpoint-sm) {
     .gradient-sides {
-        top: -390%;
+        top: -410%;
 
         .side {
             &:nth-child(1) {
