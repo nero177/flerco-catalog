@@ -112,6 +112,7 @@ const showViewer = () => {
       width: 352px;
       height: 480px;
       object-fit: contain;
+      cursor: pointer;
     }
 
     .bg-selected-color {
