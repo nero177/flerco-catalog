@@ -39,6 +39,7 @@ class Translations extends Page
         foreach ($this->translations as $locale => $content) {
             $decoded = json_decode($content, true);
             if (json_last_error() !== JSON_ERROR_NONE) {
+                dd($content);
                 $this->statusType = 'error';
                 $this->statusMessage = "Invalid JSON for locale {$locale}: " . json_last_error_msg();
                 return;
