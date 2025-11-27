@@ -50,6 +50,6 @@ class Translations extends Page
         }
 
         $this->statusType = 'success';
-        $this->statusMessage = 'Translations saved successfully.';
+        $this->statusMessage = 'Файлы переводов сохраненны, может потребоваться некоторое время чтобы изменения применились.';
     }
 }
