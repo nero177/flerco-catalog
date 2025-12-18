@@ -49,9 +49,9 @@ export const useCatalogStore = defineStore('catalog', () => {
         }
     }
 
-    const productHasBlueprints = () => {
-        return product.value.blueprints && product.value.blueprints.length > 0;
+    const productWideDisplay = () => {
+        return !product.value.blueprints || product.value.blueprints.length === 0;
     }
 
-    return { product, setProduct, productOptions, productHasBlueprints, selectProductPhoto, selectProductColor, productSelectedPhoto, productSelectedColors }
+    return { product, setProduct, productOptions, productWideDisplay, selectProductPhoto, selectProductColor, productSelectedPhoto, productSelectedColors }
 })

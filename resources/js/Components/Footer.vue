@@ -101,7 +101,7 @@ footer {
     margin-bottom: 0.5rem;
     color: #CFCFCF;
     display: flex;
-    padding: 0 30px;
+    padding: 0 30px 10px;
     justify-content: space-between;
 }
 
@@ -118,7 +118,8 @@ footer {
 }
 
 .footer-inner-item {
-    max-width: 260px;
+    max-width: 322px;
+    font-weight: 400;
 }
 
 .footer-inner-mob {
@@ -130,12 +131,14 @@ footer {
 .footer-mob-title {
     font-weight: bold;
     margin-bottom: 4px;
+    color: #fff;
+    font-size: 14px;
 }
 .footer-mob-desc {
     text-align: center;
     font-weight: 400;
     margin-bottom: 1rem;
-    font-size: 14px;
+    font-size: 12px;
 }
 
 .footer-inner-left {

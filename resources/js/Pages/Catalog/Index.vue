@@ -102,7 +102,7 @@
           </div>
         </div>
         <div class="row" style="display: flex; justify-content: center;" v-if="catalogStore.product && showAllProducts">
-          <Button outline class="add-to-cart" @click="addToCart">{{ $t('catalog.add_to_cart') }}</Button>
+          <Button outline class="btn-add-cart" @click="addToCart">{{ $t('catalog.add_to_cart') }}</Button>
         </div>
       </div>
     </div>

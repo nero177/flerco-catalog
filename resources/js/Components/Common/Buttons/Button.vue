@@ -57,6 +57,7 @@ defineProps({
     @media screen and (max-width: $breakpoint-sm) {
         font-size: 12px;
         padding: 12px;
+        border-radius: 6px;
     }
 }
 </style>

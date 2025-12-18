@@ -1,8 +1,11 @@
 <template>
     <section class="why-us" id="why-us">
-        <div class="section-content">
-            <h2 class="section-title" data-aos="fade-up" data-aos-delay="100">{{ $t('why_us.title') }}</h2>
+        <div class="container">
+            <div class="section-content">
+                <h2 class="section-title" data-aos="fade-up" data-aos-delay="100">{{ $t('why_us.title') }}</h2>
+            </div>
         </div>
+        
         <div class="why-us-content">
             <div class="advantages">
                 <div class="advantage" data-aos="fade-up" data-aos-delay="200">
@@ -43,9 +46,10 @@
 </script>
 <style lang="scss" scoped>
 .why-us {
-    margin-top: 160px;
     position: relative;
     z-index: 9;
+    max-width: 1920px;
+    margin: 160px auto 0;
 
     &-image {
         position: absolute;

@@ -1,17 +1,16 @@
 <template>
   <FrontendLayout>
-    <div class="wrapper">
-      <div class="bg-wrapper">
-        <div class="gradient">
-          <div class="side"></div>
-          <div class="side"></div>
-        </div>
+    <div class="bg-wrapper">
+      <div class="gradient">
+        <div class="side"></div>
+        <div class="side"></div>
       </div>
-
+    </div>
+    <div class="wrapper">
       <h1 data-aos="fade-up" data-aos-delay="100">{{ $t('faq.title') }}</h1>
       <div class="questions">
-        <div v-for="(question, index) in questions" :key="index" class="question"
-          :class="{ 'active': question.isOpen }" :data-aos="question.disableAnimations ? null : 'fade-up'" :data-aos-delay="question.aosDelay">
+        <div v-for="(question, index) in questions" :key="index" class="question" :class="{ 'active': question.isOpen }"
+          :data-aos="question.disableAnimations ? null : 'fade-up'" :data-aos-delay="question.aosDelay">
           <div class="question-title" @click="toggleQuestion(index)">
             <span>{{ question.title }}</span>
             <div class="question-icon">
@@ -56,6 +55,10 @@ const questions = ref([
 
 
 const toggleQuestion = (index) => {
+  questions.value.forEach(question => {
+    question.isOpen = false;
+  })
+
   questions.value[index].isOpen = !questions.value[index].isOpen;
   questions.value[index].disableAnimations = true;
 };
@@ -77,7 +80,7 @@ const toggleQuestion = (index) => {
 
 .bg-wrapper {
   position: absolute;
-  height: 1900px;
+  height: 1870px;
   width: 100%;
   overflow: hidden;
   transform: translateY(-10%);
@@ -86,7 +89,8 @@ const toggleQuestion = (index) => {
 .wrapper {
   width: 100%;
   position: relative;
-  padding-bottom: 228px;
+  // padding-bottom: 228px;
+  height: 1500px;
 }
 
 .gradient {
@@ -143,6 +147,7 @@ const toggleQuestion = (index) => {
   gap: 32px;
   max-width: 600px;
   margin: 0 auto 212px;
+  height: 800px;
 }
 
 .question {
@@ -226,12 +231,15 @@ h1 {
   }
 
   .wrapper {
-    padding-bottom: 40px;
+    padding-bottom: 0;
+    height: 1225px;
   }
 
   .questions {
     padding: 1.5rem;
-    margin: 0 auto 64px;
+    margin: 0 auto 30px;
+    height: 810px;
+    gap: 1rem;
 
     .question {
       padding: 6px 16px;

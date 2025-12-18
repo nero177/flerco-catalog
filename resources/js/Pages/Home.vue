@@ -66,7 +66,7 @@ import ContactUs from '@/Components/Home/ContactUs.vue';
 
 @media screen and (max-width: $breakpoint-sm) {
     .gradient-sides {
-        top: -410%;
+        top: -380%;
 
         .side {
             &:nth-child(1) {

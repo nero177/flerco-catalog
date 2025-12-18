@@ -52,7 +52,9 @@ import Button from '@/Components/Common/Buttons/Button.vue';
         .banner-description {
             font-size: clamp(1rem, 2vw, 1.5rem);
             margin-bottom: 2rem;
-            max-width: clamp(550px, 60vw, 610px);
+            max-width: clamp(600px, 60vw, 680px);
+            line-height: 28px;
+            letter-spacing: -1%;
         }
 
         .banner-btns {
@@ -85,7 +87,9 @@ import Button from '@/Components/Common/Buttons/Button.vue';
 
             .banner-description {
                 margin-bottom: 1rem;
-                font-size: 12px;
+                line-height: 18px;
+                letter-spacing: unset;
+                font-size: 14px;
             }
         }
 

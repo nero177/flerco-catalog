@@ -7,30 +7,32 @@
         <div class="stats-items">
             <div class="stats-item" data-aos="fade-up" data-aos-delay="100">
                 <img class="stats-item__icon" alt="" src="$/images/icons/medal.svg" />
-                <b class="stats-item__title">16</b>
+                <b class="stats-item__title">{{ $t('stats.years_on_market_num') }}</b>
                 <div class="stats-item__desc">{{ $t('stats.years_on_market') }}</div>
             </div>
             <div class="stats-item" data-aos="fade-up" data-aos-delay="200">
                 <img class="stats-item__icon" alt="" src="$/images/icons/boat.svg" />
-                <b class="stats-item__title">5000+</b>
+                <b class="stats-item__title">{{ $t('stats.products_made_num') }}</b>
                 <div class="stats-item__desc">{{ $t('stats.products_made') }}</div>
             </div>
             <div class="stats-item" data-aos="fade-up" data-aos-delay="300">
                 <img class="stats-item__icon" alt="" src="$/images/icons/globe-white.svg" />
-                <b class="stats-item__title">20</b>
+                <b class="stats-item__title">{{ $t('stats.countries_export_num') }}</b>
                 <div class="stats-item__desc">{{ $t('stats.countries_export') }}</div>
             </div>
             <div class="stats-item" data-aos="fade-up" data-aos-delay="400">
                 <img class="stats-item__icon" alt="" src="$/images/icons/like.svg" />
-                <b class="stats-item__title">98%</b>
+                <b class="stats-item__title">{{ $t('stats.positive_reviews_num') }}</b>
                 <div class="stats-item__desc">{{ $t('stats.positive_reviews') }}</div>
             </div>
         </div>
-        <div class="section-content">
-            <h2 class="section-title" data-aos="fade-up" data-aos-delay="100">{{ $t('stats.title') }}</h2>
-            <p class="section-desc" data-aos="fade-up" data-aos-delay="300">
-                {{ $t('stats.description') }}
-            </p>
+        <div class="container">
+            <div class="section-content">
+                <h2 class="section-title" data-aos="fade-up" data-aos-delay="100">{{ $t('stats.title') }}</h2>
+                <p class="section-desc" data-aos="fade-up" data-aos-delay="300">
+                    {{ $t('stats.description') }}
+                </p>
+            </div>
         </div>
     </section>
 </template>
@@ -47,6 +49,7 @@
 
     .section-content {
         margin-top: 140px;
+        height: 177px; 
     }
 
     .stats-items,

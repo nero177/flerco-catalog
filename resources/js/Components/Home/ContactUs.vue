@@ -1,98 +1,100 @@
 <template>
     <section class="contact-us" id="contact-us">
-        <div class="section-content">
-            <h2 class="section-title" data-aos="fade-up" data-aos-delay="100">{{ $t('contact_us.title') }}</h2>
-            <p class="section-desc" data-aos="fade-up" data-aos-delay="300">
-                {{ $t('contact_us.description') }}<br>
-                {{ $t('contact_us.description_sub') }}
-            </p>
-        </div>
-        <div class="contacts">
-            <div class="contact-form" data-aos="fade-up" data-aos-delay="500">
-                <div v-if="successMessage" class="success-message">
-                    {{ successMessage }}
-                </div>
-                <div v-if="errorMessage" class="error-message">
-                    {{ errorMessage }}
-                </div>
-                <div class="row">
-                    <div class="input-group col">
-                        <label>{{ $t('contact_us.form.name') }}</label>
-                        <input 
-                            type="text" 
-                            v-model="form.name"
-                            :class="{ 'error': errors.name }"
-                            required
-                        />
-                        <span v-if="errors.name" class="error-text">{{ errors.name }}</span>
-                    </div>
-                    <div class="input-group col">
-                        <label>{{ $t('contact_us.form.email_phone') }}</label>
-                        <input 
-                            type="text" 
-                            v-model="form.contact"
-                            :class="{ 'error': errors.contact }"
-                            required
-                        />
-                        <span v-if="errors.contact" class="error-text">{{ errors.contact }}</span>
-                    </div>
-                </div>
-                <div class="input-group">
-                    <label>{{ $t('contact_us.form.subject') }}</label>
-                    <input 
-                        type="text" 
-                        v-model="form.topic"
-                        :class="{ 'error': errors.topic }"
-                        required
-                    />
-                    <span v-if="errors.topic" class="error-text">{{ errors.topic }}</span>
-                </div>
-                <div class="input-group">
-                    <label>{{ $t('contact_us.form.message') }}</label>
-                    <textarea 
-                        rows="8"
-                        v-model="form.message"
-                        :class="{ 'error': errors.message }"
-                        required
-                    ></textarea>
-                    <span v-if="errors.message" class="error-text">{{ errors.message }}</span>
-                </div>
-                <Button @click="submitForm" primary :disabled="isSubmitting">
-                    {{ isSubmitting ? 'Sending...' : $t('contact_us.form.send') }}
-                </Button>
+        <div class="container">
+            <div class="section-content">
+                <h2 class="section-title" data-aos="fade-up" data-aos-delay="100">{{ $t('contact_us.title') }}</h2>
+                <p class="section-desc" data-aos="fade-up" data-aos-delay="300">
+                    {{ $t('contact_us.description') }}<br>
+                    {{ $t('contact_us.description_sub') }}
+                </p>
             </div>
-            <div class="contact-info" data-aos="fade-up" data-aos-delay="700">
-                <div class="contact-info-title">{{ $t('contact_us.contact_info.title') }}</div>
-                <div class="contact-info-items">
-                    <div class="contact-info-item">
-                        <img alt="" class="contact-info-item__icon" src="$/images/icons/pin.svg" />
-                        <div class="contact-info-item-content">
-                            <div class="contact-info-item__title">{{ $t('contact_us.contact_info.address') }}</div>
-                            <div class="contact-info-item__desc">{{ $t('contact_us.contact_info.address_value') }}</div>
+            <div class="contacts">
+                <div class="contact-form" data-aos="fade-up" data-aos-delay="500">
+                    <div v-if="successMessage" class="success-message">
+                        {{ successMessage }}
+                    </div>
+                    <div v-if="errorMessage" class="error-message">
+                        {{ errorMessage }}
+                    </div>
+                    <div class="row">
+                        <div class="input-group col">
+                            <label>{{ $t('contact_us.form.name') }}</label>
+                            <input 
+                                type="text" 
+                                v-model="form.name"
+                                :class="{ 'error': errors.name }"
+                                required
+                            />
+                            <span v-if="errors.name" class="error-text">{{ errors.name }}</span>
+                        </div>
+                        <div class="input-group col">
+                            <label>{{ $t('contact_us.form.email_phone') }}</label>
+                            <input 
+                                type="text" 
+                                v-model="form.contact"
+                                :class="{ 'error': errors.contact }"
+                                required
+                            />
+                            <span v-if="errors.contact" class="error-text">{{ errors.contact }}</span>
                         </div>
                     </div>
-                    <div class="contact-info-item">
-                        <img alt="" class="contact-info-item__icon" src="$/images/icons/cell.svg" />
-                        <div class="contact-info-item-content">
-                            <div class="contact-info-item__title">{{ $t('contact_us.contact_info.phone') }}</div>
-                            <div class="contact-info-item__desc">{{ $t('contact_us.contact_info.phone_value') }}</div>
-                        </div>
+                    <div class="input-group">
+                        <label>{{ $t('contact_us.form.subject') }}</label>
+                        <input 
+                            type="text" 
+                            v-model="form.topic"
+                            :class="{ 'error': errors.topic }"
+                            required
+                        />
+                        <span v-if="errors.topic" class="error-text">{{ errors.topic }}</span>
                     </div>
-                    <div class="contact-info-item">
-                        <img alt="" class="contact-info-item__icon" src="$/images/icons/mail.svg" />
-                        <div class="contact-info-item-content">
-                            <div class="contact-info-item__title">{{ $t('contact_us.contact_info.email') }}</div>
-                            <div class="contact-info-item__desc">ofﬁce@ﬂerco.com</div>
-                        </div>
+                    <div class="input-group">
+                        <label>{{ $t('contact_us.form.message') }}</label>
+                        <textarea 
+                            rows="8"
+                            v-model="form.message"
+                            :class="{ 'error': errors.message }"
+                            required
+                        ></textarea>
+                        <span v-if="errors.message" class="error-text">{{ errors.message }}</span>
                     </div>
-                    <div class="contact-info-item">
-                        <img alt="" class="contact-info-item__icon" src="$/images/icons/clock-white.svg" />
-                        <div class="contact-info-item-content">
-                            <div class="contact-info-item__title">{{ $t('contact_us.contact_info.hours') }}</div>
-                            <div class="contact-info-item__desc">
-                    {{ $t('contact_us.contact_info.hours_value') }}<br>
-                    {{ $t('contact_us.contact_info.hours_value_weekend') }}
+                    <Button @click="submitForm" primary :disabled="isSubmitting">
+                        {{ isSubmitting ? 'Sending...' : $t('contact_us.form.send') }}
+                    </Button>
                 </div>
+                <div class="contact-info" data-aos="fade-up" data-aos-delay="700">
+                    <div class="contact-info-title">{{ $t('contact_us.contact_info.title') }}</div>
+                    <div class="contact-info-items">
+                        <div class="contact-info-item">
+                            <img alt="" class="contact-info-item__icon" src="$/images/icons/pin.svg" />
+                            <div class="contact-info-item-content">
+                                <div class="contact-info-item__title">{{ $t('contact_us.contact_info.address') }}</div>
+                                <div class="contact-info-item__desc">{{ $t('contact_us.contact_info.address_value') }}</div>
+                            </div>
+                        </div>
+                        <div class="contact-info-item">
+                            <img alt="" class="contact-info-item__icon" src="$/images/icons/cell.svg" />
+                            <div class="contact-info-item-content">
+                                <div class="contact-info-item__title">{{ $t('contact_us.contact_info.phone') }}</div>
+                                <div class="contact-info-item__desc">{{ $t('contact_us.contact_info.phone_value') }}</div>
+                            </div>
+                        </div>
+                        <div class="contact-info-item">
+                            <img alt="" class="contact-info-item__icon" src="$/images/icons/mail.svg" />
+                            <div class="contact-info-item-content">
+                                <div class="contact-info-item__title">{{ $t('contact_us.contact_info.email') }}</div>
+                                <div class="contact-info-item__desc">ofﬁce@ﬂerco.com</div>
+                            </div>
+                        </div>
+                        <div class="contact-info-item">
+                            <img alt="" class="contact-info-item__icon" src="$/images/icons/clock-white.svg" />
+                            <div class="contact-info-item-content">
+                                <div class="contact-info-item__title">{{ $t('contact_us.contact_info.hours') }}</div>
+                                <div class="contact-info-item__desc">
+                                    {{ $t('contact_us.contact_info.hours_value') }}<br>
+                                    {{ $t('contact_us.contact_info.hours_value_weekend') }}
+                                </div>
+                            </div>
                         </div>
                     </div>
                 </div>
@@ -192,12 +194,16 @@ const submitForm = async () => {
        .contact-info {
            display: none;
        }
+
+       .section-desc {
+            padding-bottom: 1rem;
+       }
     }
 }
 
 .contacts {
     display: flex;
-    justify-content: center;
+    justify-content: space-between;
     gap: 80px;
     margin-top: 104px;
 
@@ -292,7 +298,7 @@ const submitForm = async () => {
 
     &__desc {
         color: #D8D8D8;
-        font-size: 12px;
+        font-size: 13px;
         font-weight: 400;
     }
 }

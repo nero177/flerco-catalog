@@ -1,6 +1,6 @@
 <template>
   <div class="card product-gallery">
-    <div class="main-image">
+    <div class="main-image" v-if="!catalogStore.productWideDisplay()">
       <div class="bg-selected-color" :style="{
         '--selected-color': selectedColorHexWithAlpha
       }"></div>
@@ -14,7 +14,7 @@
 
 
     <!-- Slick.js Gallery -->
-    <div class="gallery-slider" ref="gallerySlider">
+    <div class="gallery-slider" ref="gallerySlider" :class="{'hide-on-wide': catalogStore.productWideDisplay()}">
       <div class="gallery-slide" v-for="(image, index) in images" :key="index">
         <div class="gallery-image" @click="catalogStore.selectProductPhoto(index)"
           :class="{ active: catalogStore.product.selectedPhoto === index || !catalogStore.product.selectedPhoto && index === 0 }">
@@ -23,7 +23,11 @@
         </div>
       </div>
     </div>
-
+    <div class="product-wide-images" v-if="catalogStore.productWideDisplay()">
+      <div class="product-wide-image" v-for="(image, index) in images" :key="index">
+        <img :src="image.src" :alt="image.alt" @click="showViewer">
+      </div>
+    </div>
     <div class="product-info-mob">
       {{ localized(catalogStore.product.desc) }}
     </div>
@@ -32,8 +36,7 @@
 <script setup>
 import { useCatalogStore } from '@/stores/catalog';
 import { computed, ref, onMounted, nextTick } from 'vue'
-import { hexToRgba } from '@/helpers';
-import { localized } from '@/helpers';
+import { hexToRgba, localized } from '@/helpers';
 import { api as viewerApi } from 'v-viewer'
 
 const catalogStore = useCatalogStore();
@@ -98,6 +101,23 @@ const showViewer = () => {
 }
 </script>
 <style lang="scss">
+.product-wide-images {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: center;
+
+  img {
+    max-width: 450px;
+    max-height: 450px;
+    cursor: pointer;
+  }
+
+  @media screen and (max-width: $breakpoint-sm) {
+    display: none;
+  }
+}
+
 .product-gallery {
   padding: 28px 1rem;
 
@@ -112,7 +132,7 @@ const showViewer = () => {
       width: 352px;
       height: 480px;
       object-fit: contain;
-      cursor: pointer;
+      cursor: zoom-in;
     }
 
     .bg-selected-color {
@@ -161,6 +181,10 @@ const showViewer = () => {
         }
       }
     }
+
+    &.hide-on-wide {
+      display: none;
+    }
   }
 
   .product-info-mob {
@@ -182,6 +206,10 @@ const showViewer = () => {
         right: -5px;
         z-index: 999;
         scale: 1.2;
+      }
+
+      &.hide-on-wide {
+        display: block;
       }
     }
 

@@ -90,11 +90,11 @@
 
       <div v-if="checklistItems.length > 0" class="order-form">
         <div class="inputs">
-          <div class="input-group">
+          <div class="input-group name-input">
             <label for="name">{{ $t('checklist.name') }}</label>
             <input type="text" id="name" v-model="name">
           </div>
-          <div class="input-group">
+          <div class="input-group email-input">
             <label for="email">{{ $t('checklist.email_number') }}</label>
             <input type="text" id="email" v-model="contact">
           </div>
@@ -190,10 +190,17 @@ onMounted(() => {
   margin: 80px auto 0;
 
   .inputs {
-    display: grid;
-    grid-template-columns: .5fr 1fr;
+    display: flex;
     gap: 1rem;
     margin-bottom: 32px;
+
+    .name-input {
+      max-width: 216px;
+    }
+
+    .email-input {
+      width: 100%;
+    }
   }
 
   .btn-primary {
@@ -210,6 +217,20 @@ onMounted(() => {
 
     .inputs {
       margin-bottom: 1.5rem;
+      flex-wrap: wrap;
+
+      .name-input {
+        max-width: unset;
+        width: 100%;
+      }
+
+      label {
+        white-space: nowrap;
+      }
+
+      .email-input {
+        width: 100%;
+      }
     }
 
     .btn-primary {
@@ -245,14 +266,13 @@ onMounted(() => {
 
 .empty-state {
   display: flex;
-  justify-content: center;
   align-items: center;
   min-height: 400px;
   text-align: center;
 
   &-content {
     max-width: 400px;
-    padding: 40px 20px;
+    padding: 0px 20px;
   }
 
   &-icon {
@@ -285,7 +305,7 @@ onMounted(() => {
     min-height: 300px;
 
     &-content {
-      padding: 20px;
+      padding: 0 20px;
     }
 
     &-title {
