@@ -1,6 +1,6 @@
 <template>
 	<div class="amount-wrapper">
-		{{ $t('amount_selector.quantity') }}
+		{{ $t('common.amount_selector.quantity') }}
 		<div class="amount">
 			<div class="amount-arrow" @click="changeAmount(amount - 1)"><img src="$/images/icons/arrow-right.svg" alt="">
 			</div>

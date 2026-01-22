@@ -1,7 +1,7 @@
 <template>
   <FrontendLayout>
     <div class="catalog-wrapper checklist-wrapper">
-      <h1>{{ $t('checklist.title') }}</h1>
+      <h1>{{ $t('common.checklist.title') }}</h1>
       <div class="checklist-items container">
         <!-- Empty state -->
         <div v-if="checklistItems.length === 0" class="empty-state">
@@ -22,9 +22,9 @@
                   stroke-linejoin="round" />
               </svg>
             </div>
-            <h2 class="empty-state-title">{{ $t('checklist.empty_state.message') }}</h2>
+            <h2 class="empty-state-title">{{ $t('common.checklist.empty_state.message') }}</h2>
             <Button @click="goToCatalog" primary class="empty-state-button">
-              {{ $t('checklist.empty_state.button') }}
+              {{ $t('common.checklist.empty_state.button') }}
             </Button>
           </div>
         </div>
@@ -81,7 +81,7 @@
                 @logo-change="(val) => item.options.logo = val"
               />
               <div class="wishes input-group">
-                <textarea v-model="item.options.wishes" :placeholder="$t('checklist.wishes')"></textarea>
+                <textarea v-model="item.options.wishes" :placeholder="$t('common.checklist.wishes')"></textarea>
               </div>
             </div>
           </div>
@@ -91,16 +91,16 @@
       <div v-if="checklistItems.length > 0" class="order-form">
         <div class="inputs">
           <div class="input-group name-input">
-            <label for="name">{{ $t('checklist.name') }}</label>
+            <label for="name">{{ $t('common.checklist.name') }}</label>
             <input type="text" id="name" v-model="name">
           </div>
           <div class="input-group email-input">
-            <label for="email">{{ $t('checklist.email_number') }}</label>
+            <label for="email">{{ $t('common.checklist.email_number') }}</label>
             <input type="text" id="email" v-model="contact">
           </div>
         </div>
         <div class="btn btn-primary" @click="handlePurchase" :disabled="isSubmitting">
-          {{ isSubmitting ? 'Processing...' : $t('checklist.purchase') }}
+          {{ isSubmitting ? 'Processing...' : $t('common.checklist.purchase') }}
         </div>
       </div>
     </div>

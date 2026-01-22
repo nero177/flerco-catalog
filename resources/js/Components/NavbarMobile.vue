@@ -2,23 +2,23 @@
     <nav class="navbar-links-mob">
         <Link href="/" :class="['nav-link', { active: $page.url === '/' }]">
         <img src="$/images/icons/main.svg" class="icon" alt="" />
-        <div class="title">{{ $t('navbar.home') }}</div>
+        <div class="title">{{ $t('common.navbar.home') }}</div>
         </Link>
         <Link href="/catalog" :class="['nav-link', { active: $page.url.startsWith('/catalog') }]">
         <img src="$/images/icons/boatheader.svg" class="icon" alt="" />
-        <div class="title">{{ $t('navbar.catalog') }}</div>
+        <div class="title">{{ $t('common.navbar.catalog') }}</div>
         </Link>
         <Link href="/checklist" :class="['nav-link', { active: $page.url.startsWith('/checklist') }]">
         <img src="$/images/icons/checklist.svg" class="icon" alt="" />
-        <div class="title">{{ $t('navbar.checklist') }}</div>
+        <div class="title">{{ $t('common.navbar.checklist') }}</div>
         </Link>
         <Link href="/faq" :class="['nav-link', { active: $page.url.startsWith('/faq') }]">
         <img src="$/images/icons/faq.svg" class="icon" alt="" />
-        <div class="title">{{ $t('navbar.help') }}</div>
+        <div class="title">{{ $t('common.navbar.help') }}</div>
         </Link>
         <Link href="/about-us" :class="['nav-link', { active: $page.url.startsWith('/about-us') }]">
         <img src="$/images/icons/about-us.svg" class="icon" alt="" />
-        <div class="title">{{ $t('navbar.about_us') }}</div>
+        <div class="title">{{ $t('common.navbar.about_us') }}</div>
         </Link>
     </nav>
 </template>

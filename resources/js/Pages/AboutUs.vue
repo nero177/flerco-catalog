@@ -2,58 +2,58 @@
   <FrontendLayout>
     <div class="catalog-wrapper">
       <div class="container">
-        <h1 data-aos="fade-up" data-aos-delay="100">{{ t('about_workshop.title') }}</h1>
+        <h1 data-aos="fade-up" data-aos-delay="100">{{ t('common.about_workshop.title') }}</h1>
 
-        <h2 data-aos="fade-up" data-aos-delay="300">{{ t('about_workshop.history.title') }}</h2>
+        <h2 data-aos="fade-up" data-aos-delay="300">{{ t('common.about_workshop.history.title') }}</h2>
         <div class="card text-card" data-aos="fade-up" data-aos-delay="500">
-          {{ t('about_workshop.history.description') }}
+          {{ t('common.about_workshop.history.description') }}
         </div>
 
-        <h2 data-aos="fade-up" data-aos-delay="100">{{ t('about_workshop.how_we_work.title') }}</h2>
+        <h2 data-aos="fade-up" data-aos-delay="100">{{ t('common.about_workshop.how_we_work.title') }}</h2>
 
         <div class="text-card-grid">
           <div class="item" data-aos="fade-up" data-aos-delay="300">
             <div class="text-card-title">
-              {{ t('about_workshop.how_we_work.step1.title') }}
+              {{ t('common.about_workshop.how_we_work.step1.title') }}
             </div>
             <div class="card text-card">
-              {{ t('about_workshop.how_we_work.step1.description') }}
+              {{ t('common.about_workshop.how_we_work.step1.description') }}
             </div>
           </div>
           <div class="item" data-aos="fade-up" data-aos-delay="500">
             <div class="text-card-title">
-              {{ t('about_workshop.how_we_work.step2.title') }}
+              {{ t('common.about_workshop.how_we_work.step2.title') }}
             </div>
             <div class="card text-card">
-              {{ t('about_workshop.how_we_work.step2.description') }}
+              {{ t('common.about_workshop.how_we_work.step2.description') }}
             </div>
           </div>
           <div class="item" data-aos="fade-up" data-aos-delay="700">
             <div class="text-card-title">
-              {{ t('about_workshop.how_we_work.step3.title') }}
+              {{ t('common.about_workshop.how_we_work.step3.title') }}
             </div>
             <div class="card text-card">
-              {{ t('about_workshop.how_we_work.step3.description') }}
+              {{ t('common.about_workshop.how_we_work.step3.description') }}
             </div>
           </div>
           <div class="item" data-aos="fade-up" data-aos-delay="900">
             <div class="text-card-title">
-              {{ t('about_workshop.how_we_work.step4.title') }}
+              {{ t('common.about_workshop.how_we_work.step4.title') }}
             </div>
             <div class="card text-card">
-              {{ t('about_workshop.how_we_work.step4.description') }}
+              {{ t('common.about_workshop.how_we_work.step4.description') }}
             </div>
           </div>
         </div>
 
-        <h2 data-aos="fade-up" data-aos-delay="100">{{ t('about_workshop.why_choose_us.title') }}</h2>
+        <h2 data-aos="fade-up" data-aos-delay="100">{{ t('common.about_workshop.why_choose_us.title') }}</h2>
         <div class="card text-card" data-aos="fade-up" data-aos-delay="300">
-          {{ t('about_workshop.why_choose_us.description') }}
+          {{ t('common.about_workshop.why_choose_us.description') }}
         </div>
 
-        <h2 data-aos="fade-up" data-aos-delay="100">{{ t('about_workshop.individual_projects.title') }}</h2>
+        <h2 data-aos="fade-up" data-aos-delay="100">{{ t('common.about_workshop.individual_projects.title') }}</h2>
         <div class="card text-card" data-aos="fade-up" data-aos-delay="300">
-          {{ t('about_workshop.individual_projects.description') }}
+          {{ t('common.about_workshop.individual_projects.description') }}
         </div>
 
         <div class="seats">
@@ -62,7 +62,7 @@
         </div>
 
         <div class="seats-desc" data-aos="fade-up" data-aos-delay="500">
-          {{ t('about_workshop.individual_projects.examples') }}
+          {{ t('common.about_workshop.individual_projects.examples') }}
         </div>
       </div>
     </div>

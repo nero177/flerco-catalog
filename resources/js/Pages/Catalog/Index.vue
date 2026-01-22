@@ -1,7 +1,7 @@
 <template>
   <FrontendLayout>
     <div class="catalog-wrapper">
-      <h1>{{ $t('catalog.title') }}</h1>
+      <h1>{{ $t('common.catalog.title') }}</h1>
       <div class="selected-product-mob" v-if="isMobile && catalogStore?.product?.id && !showAllProducts">
         <div class="arrow-back" @click="catalogStore.setProduct(null)">
           <svg width="48" height="33" viewBox="0 0 48 33" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -42,7 +42,7 @@
           <div class="product-card">
             <div class="product-card-content">
               <img src="$/images/catalog-all.png" alt="" class="product-card-image" />
-              <div class="product-card-title">{{ $t('catalog.all_products_title') }}</div>
+              <div class="product-card-title">{{ $t('common.catalog.all_products_title') }}</div>
             </div>
           </div>
           <div class="arrow-next" @click="navigateToNext">
@@ -65,7 +65,7 @@
         <div class="product-card catalog-all" :class="{ active: showAllProducts }" @click="showAll">
           <div class="product-card-content">
             <img src="$/images/catalog-all.png" alt="Fler & Co - каталог" class="product-card-image" />
-            <div class="product-card-title">{{ $t('catalog.all_products_title') }}</div>
+            <div class="product-card-title">{{ $t('common.catalog.all_products_title') }}</div>
           </div>
         </div>
       </div>
@@ -97,12 +97,12 @@
         <div class="row wishes-card" v-if="catalogStore.product && showAllProducts">
           <div class="col">
             <div class="wishes input-group">
-              <textarea name="" id="" v-model="wishesText" :placeholder="$t('catalog.wishes_placeholder')"></textarea>
+              <textarea name="" id="" v-model="wishesText" :placeholder="$t('common.catalog.wishes_placeholder')"></textarea>
             </div>
           </div>
         </div>
         <div class="row" style="display: flex; justify-content: center;" v-if="catalogStore.product && showAllProducts">
-          <Button outline class="btn-add-cart" @click="addToCart">{{ $t('catalog.add_to_cart') }}</Button>
+          <Button outline class="btn-add-cart" @click="addToCart">{{ $t('common.catalog.add_to_cart') }}</Button>
         </div>
       </div>
     </div>

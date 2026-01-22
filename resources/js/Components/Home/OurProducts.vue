@@ -2,8 +2,8 @@
     <div class="container">
         <section class="our-products" id="our-products">
             <div class="section-content">
-                <h2 class="section-title" data-aos="fade-up" data-aos-delay="100">{{ $t('our_products.title') }}</h2>
-                <p class="section-desc" data-aos="fade-up" data-aos-delay="300">{{ $t('our_products.description') }}</p>
+                <h2 class="section-title" data-aos="fade-up" data-aos-delay="100">{{ $t('common.our_products.title') }}</h2>
+                <p class="section-desc" data-aos="fade-up" data-aos-delay="300">{{ $t('common.our_products.description') }}</p>
             </div>
             <div class="products">
                 <a href="#" class="product" data-aos="fade-up" data-aos-delay="400">
@@ -16,7 +16,7 @@
                     <img src="$/images/seat3.png" alt="" />
                 </a>
             </div>
-            <Button href="/catalog" primary data-aos="fade-up" data-aos-delay="700">{{ $t('our_products.learn_more') }}</Button>
+            <Button href="/catalog" primary data-aos="fade-up" data-aos-delay="700">{{ $t('common.our_products.learn_more') }}</Button>
         </section>
     </div>
 </template>

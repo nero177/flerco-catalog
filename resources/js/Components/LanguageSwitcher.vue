@@ -32,7 +32,11 @@ const languages = [
     icon: '/images/icons/en.svg'
   },
 ];
-const currentLanguage = ref(languages[0]);
+
+const currentLanguage = ref(
+  languages.find(l => l.name === locale.value) || languages[0]
+);
+
 const openLangSelection = ref(false);
 
 onMounted(() => {
@@ -54,6 +58,7 @@ onMounted(() => {
 })
 
 const switchLanguage = (langIndex) => {
+  console.log(langIndex)
   currentLanguage.value = languages[langIndex];
   locale.value = currentLanguage.value.name;
   

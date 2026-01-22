@@ -7,10 +7,16 @@
       </div>
     </div>
     <div class="wrapper">
-      <h1 data-aos="fade-up" data-aos-delay="100">{{ $t('faq.title') }}</h1>
+      <h1 data-aos="fade-up" data-aos-delay="100">{{ $t('common.faq.title') }}</h1>
       <div class="questions">
-        <div v-for="(question, index) in questions" :key="index" class="question" :class="{ 'active': question.isOpen }"
-          :data-aos="question.disableAnimations ? null : 'fade-up'" :data-aos-delay="question.aosDelay">
+        <div 
+          v-for="(question, index) in questions" 
+          :key="index" class="question" 
+          :class="{ 'active': question.isOpen }"
+          :data-aos="question.disableAnimations ? undefined : 'fade-up'"
+          :data-aos-once="true"
+          :data-aos-delay="question.aosDelay"
+        >
           <div class="question-title" @click="toggleQuestion(index)">
             <span>{{ question.title }}</span>
             <div class="question-icon">
@@ -29,38 +35,36 @@
         </div>
       </div>
       <div class="bottom-part">
-        <div class="text-bottom">{{ $t('faq.not_found') }}</div>
-        <Button outline href="/#contact-us">{{ $t('faq.contact_us') }}</Button>
+        <div class="text-bottom">{{ $t('common.faq.not_found') }}</div>
+        <Button outline href="/#contact-us">{{ $t('common.faq.contact_us') }}</Button>
       </div>
     </div>
   </FrontendLayout>
 </template>
 <script setup>
-import { ref } from 'vue';
+import { ref, computed } from 'vue';
 import FrontendLayout from '@/Layouts/FrontendLayout.vue';
 import Button from '@/Components/Common/Buttons/Button.vue';
 import { useI18n } from 'vue-i18n'
 
 const { t } = useI18n()
 
-const questions = ref([
-  { title: t('faq.q1.title'), body: t('faq.q1.body'), isOpen: false, aosDelay: 100 },
-  { title: t('faq.q2.title'), body: t('faq.q2.body'), isOpen: false, aosDelay: 200 },
-  { title: t('faq.q3.title'), body: t('faq.q3.body'), isOpen: false, aosDelay: 300 },
-  { title: t('faq.q4.title'), body: t('faq.q4.body'), isOpen: false, aosDelay: 400 },
-  { title: t('faq.q5.title'), body: t('faq.q5.body'), isOpen: false, aosDelay: 500 },
-  { title: t('faq.q6.title'), body: t('faq.q6.body'), isOpen: false, aosDelay: 600 },
-  { title: t('faq.q7.title'), body: t('faq.q7.body'), isOpen: false, aosDelay: 700 }
-]);
+const questions = computed(() => [
+  { title: t('common.faq.q1.title'), body: t('common.faq.q1.body'), isOpen: openIndex.value === 0, disableAnimations: animatedOnce.value.has(0), aosDelay: 100 },
+  { title: t('common.faq.q2.title'), body: t('common.faq.q2.body'), isOpen: openIndex.value === 1, disableAnimations: animatedOnce.value.has(1), aosDelay: 200 },
+  { title: t('common.faq.q3.title'), body: t('common.faq.q3.body'), isOpen: openIndex.value === 2, disableAnimations: animatedOnce.value.has(2), aosDelay: 300 },
+  { title: t('common.faq.q4.title'), body: t('common.faq.q4.body'), isOpen: openIndex.value === 3, disableAnimations: animatedOnce.value.has(3), aosDelay: 400 },
+  { title: t('common.faq.q5.title'), body: t('common.faq.q5.body'), isOpen: openIndex.value === 4, disableAnimations: animatedOnce.value.has(4), aosDelay: 500 },
+  { title: t('common.faq.q6.title'), body: t('common.faq.q6.body'), isOpen: openIndex.value === 5, disableAnimations: animatedOnce.value.has(5), aosDelay: 600 },
+  { title: t('common.faq.q7.title'), body: t('common.faq.q7.body'), isOpen: openIndex.value === 6, disableAnimations: animatedOnce.value.has(6), aosDelay: 700 }
+])
 
+const openIndex = ref(null);
+const animatedOnce = ref(new Set());
 
 const toggleQuestion = (index) => {
-  questions.value.forEach(question => {
-    question.isOpen = false;
-  })
-
-  questions.value[index].isOpen = !questions.value[index].isOpen;
-  questions.value[index].disableAnimations = true;
+  openIndex.value = openIndex.value === index ? null : index
+  animatedOnce.value.add(index)
 };
 </script>
 <style lang="scss" scoped>

@@ -4,11 +4,11 @@
     <div class="checkbox-items">
       <div class="checkbox-item">
         <input type="checkbox" name="" id="" v-model="heat" @change="(val) => $emit('heat-change', val.target.checked)">
-        {{ $t('product_filters.heat') }}
+        {{ $t('common.product_filters.heat') }}
       </div>
       <div class="checkbox-item">
         <input type="checkbox" name="" id="" v-model="logo" @change="(val) => $emit('logo-change', val.target.checked)">
-        {{ $t('product_filters.logo') }}
+        {{ $t('common.product_filters.logo') }}
       </div>
     </div>
   </div>

@@ -3,58 +3,58 @@
         <div class="footer-inner footer-inner-desk">
             <div class="footer-inner-left">
                 <div class="footer-inner-item">
-                    {{ $t('footer.questions') }}<br>
-                    {{ $t('footer.questions_sub') }}
+                    {{ $t('common.footer.questions') }}<br>
+                    {{ $t('common.footer.questions_sub') }}
                 </div>
 
                 <div class="footer-inner-item">
-                    {{ $t('footer.address') }}<br>
+                    {{ $t('common.footer.address') }}<br>
                     ofﬁce@ﬂerco.com
                 </div>
 
                 <div class="footer-inner-item">
-                    {{ $t('footer.phone') }}<br>
-                    {{ $t('footer.phone_username') }}
+                    {{ $t('common.footer.phone') }}<br>
+                    {{ $t('common.footer.phone_username') }}
                 </div>
             </div>
             <div class="copyright">
-                {{ $t('footer.copyright') }}<br>
-                {{ $t('footer.copyright_rights') }}
+                {{ $t('common.footer.copyright') }}<br>
+                {{ $t('common.footer.copyright_rights') }}
             </div>
         </div>
         <div class="footer-inner footer-inner-mob">
             <div class="footer-mob-title">
-                {{ $t('footer.mobile.title') }}
+                {{ $t('common.footer.mobile.title') }}
             </div>
             <div class="footer-mob-desc">
-                {{ $t('footer.mobile.description') }}
+                {{ $t('common.footer.mobile.description') }}
             </div>
 
             <div class="footer-mob-items">
                 <div class="footer-mob-item">
                     <div class="footer-mob-item-title">
                         <img alt="" class="contact-info-item__icon" src="$/images/icons/pin.svg" />
-                        {{ $t('footer.mobile.address') }}
+                        {{ $t('common.footer.mobile.address') }}
                     </div>
                     <div class="footer-mob-item-value">
-                        {{ $t('footer.mobile.address_value') }}
+                        {{ $t('common.footer.mobile.address_value') }}
                     </div>
                 </div>
 
                 <div class="footer-mob-item">
                     <div class="footer-mob-item-title">
                         <img alt="" class="contact-info-item__icon" src="$/images/icons/viber.svg" />
-                        {{ $t('footer.mobile.phone') }}
+                        {{ $t('common.footer.mobile.phone') }}
                     </div>
                     <div class="footer-mob-item-value">
-                        {{ $t('footer.mobile.phone_value') }}
+                        {{ $t('common.footer.mobile.phone_value') }}
                     </div>
                 </div>
 
                 <div class="footer-mob-item">
                     <div class="footer-mob-item-title">
                         <img alt="" class="contact-info-item__icon" src="$/images/icons/tg.svg" />
-                        {{ $t('footer.mobile.telegram') }}
+                        {{ $t('common.footer.mobile.telegram') }}
                     </div>
                     <div class="footer-mob-item-value">
                         @username
@@ -64,7 +64,7 @@
                 <div class="footer-mob-item">
                     <div class="footer-mob-item-title">
                         <img alt="" class="contact-info-item__icon" src="$/images/icons/mail.svg" />
-                        {{ $t('footer.mobile.email') }}
+                        {{ $t('common.footer.mobile.email') }}
                     </div>
                     <div class="footer-mob-item-value">
                         ofﬁce@ﬂerco.com
@@ -73,17 +73,17 @@
                 <div class="footer-mob-item">
                     <div class="footer-mob-item-title">
                         <img alt="" class="contact-info-item__icon" src="$/images/icons/clock-white.svg" />
-                        {{ $t('footer.mobile.hours') }}
+                        {{ $t('common.footer.mobile.hours') }}
                     </div>
                     <div class="footer-mob-item-value">
-                        {{ $t('footer.mobile.hours_value') }}<br>
-                        {{ $t('footer.mobile.hours_value_weekend') }}
+                        {{ $t('common.footer.mobile.hours_value') }}<br>
+                        {{ $t('common.footer.mobile.hours_value_weekend') }}
                     </div>
                 </div>
             </div>
             <div class="footer-bottom">
-                <div class="copyright">{{ $t('footer.mobile.copyright') }}</div>
-                <div class="all-rights">{{ $t('footer.mobile.all_rights') }}</div>
+                <div class="copyright">{{ $t('common.footer.mobile.copyright') }}</div>
+                <div class="all-rights">{{ $t('common.footer.mobile.all_rights') }}</div>
             </div>
         </div>
     </footer>

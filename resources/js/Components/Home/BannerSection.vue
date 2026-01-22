@@ -4,22 +4,21 @@
         <img src="$/images/landscape-mob.png" class="banner-bg-mob" alt="">
         <div class="banner-content">
             <h1 data-aos="fade-up" data-aos-delay="200">
-                {{ $t('banner_section.h1') }} <br>
-                <span>{{ $t('banner_section.h1_span') }}</span>
+                {{ $t('common.banner_section.h1') }} <br>
+                <span>{{ $t('common.banner_section.h1_span') }}</span>
             </h1>
             <p class="banner-description" data-aos="fade-up" data-aos-delay="500">
-                {{ $t('banner_section.description') }}
+                {{ $t('common.banner_section.description') }}
             </p>
             <div class="banner-btns" data-aos="fade-up" data-aos-delay="700">
-                <Button primary href="/catalog">{{ $t('banner_section.learn_more') }}</Button>
-                <Button outline href="#contact-us">{{ $t('banner_section.contact_us') }}</Button>
+                <Button primary href="/catalog">{{ $t('common.banner_section.learn_more') }}</Button>
+                <Button outline href="#contact-us">{{ $t('common.banner_section.contact_us') }}</Button>
             </div>
         </div>
     </section>
 </template>
 <script setup>
 import Button from '@/Components/Common/Buttons/Button.vue';
-
 </script>
 <style lang="scss" scoped>
 .banner-section {

@@ -11,13 +11,18 @@
             <ProductFilters/>
           </div>
           <div class="wishes input-group">
-            <textarea name="" id="" v-model="wishesText" :placeholder="$t('product.wishes_placeholder')"></textarea>
+            <textarea name="" id="" v-model="wishesText" :placeholder="$t('common.product.wishes_placeholder')"></textarea>
           </div>
         </div>
 
         <div class="card product-blueprints" v-if="!catalogStore.productWideDisplay()">
-          <img v-for="(blueprint, index) in catalogStore.product?.blueprints" :key="index" :src="'/storage/' + blueprint"
-            :alt="localized(catalogStore.product.title) + ' - ' + $t('product.blueprint_alt') + ' ' + (index + 1)">
+          <img 
+            v-for="(blueprint, index) in blueprints" 
+            :key="index" 
+            :src="blueprint.src"
+            :alt="blueprint.alt"
+            @click="showViewer(index)"
+          >
         </div>
       </div>
     </div>
@@ -27,7 +32,7 @@
       </div>
     </div>
     <div class="row button-row" v-if="catalogStore.productWideDisplay()">
-      <Button outline @click="addToCart" class="btn-add-cart">{{ $t('product.add_to_cart') }}</Button>
+      <Button outline @click="addToCart" class="btn-add-cart">{{ $t('common.product.add_to_cart') }}</Button>
     </div>
 
     <div class="row" v-if="!catalogStore.productWideDisplay()">
@@ -35,9 +40,9 @@
         <div class="card product-controls">
           <ProductFilters />
 
-          <Button outline @click="addToCart" class="btn-add-cart">{{ $t('product.add_to_cart') }}</Button>
+          <Button outline @click="addToCart" class="btn-add-cart">{{ $t('common.product.add_to_cart') }}</Button>
           <div class="wishes input-group">
-            <textarea name="" id="" v-model="wishesText" :placeholder="$t('product.wishes_placeholder')"></textarea>
+            <textarea name="" id="" v-model="wishesText" :placeholder="$t('common.product.wishes_placeholder')"></textarea>
           </div>
         </div>
       </div>
@@ -53,6 +58,10 @@ import ProductGallery from '@/Components/Catalog/ProductGallery.vue';
 import Button from '@/Components/Common/Buttons/Button.vue'
 import { useChecklistStore } from '@/stores/checklist';
 import { localized } from '@/helpers';
+import { api as viewerApi } from 'v-viewer'
+import { useI18n } from 'vue-i18n'
+
+const { t } = useI18n()
 
 const catalogStore = useCatalogStore();
 const checklistStore = useChecklistStore();
@@ -62,6 +71,22 @@ const addToCart = () => {
   catalogStore.productOptions.wishes = wishesText.value;
   
   checklistStore.addProduct()
+}
+
+const blueprints = computed(() => {
+  return catalogStore.product?.blueprints.map((image, index) => ({
+    src: '/storage/' + image,
+    alt: localized(catalogStore.product.title) + ' - ' + t('product.blueprint_alt') + ' ' + (index + 1)
+  }));
+});
+
+const showViewer = (index) => {
+  viewerApi({
+    images: blueprints.value,
+    options: {
+      initialViewIndex: index
+    }
+  })
 }
 </script>
 <style lang="scss" scoped>
@@ -130,6 +155,7 @@ const addToCart = () => {
         object-fit: contain;
         width: 50%;
         height: 200px;
+        cursor: pointer;
       }
     }
 

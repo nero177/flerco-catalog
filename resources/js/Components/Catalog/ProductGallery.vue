@@ -109,7 +109,7 @@ const showViewer = () => {
 
   img {
     max-width: 450px;
-    max-height: 450px;
+    max-height: 400px;
     cursor: pointer;
   }
 

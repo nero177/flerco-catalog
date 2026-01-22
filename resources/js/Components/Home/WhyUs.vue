@@ -2,7 +2,7 @@
     <section class="why-us" id="why-us">
         <div class="container">
             <div class="section-content">
-                <h2 class="section-title" data-aos="fade-up" data-aos-delay="100">{{ $t('why_us.title') }}</h2>
+                <h2 class="section-title" data-aos="fade-up" data-aos-delay="100">{{ $t('common.why_us.title') }}</h2>
             </div>
         </div>
         
@@ -11,29 +11,29 @@
                 <div class="advantage" data-aos="fade-up" data-aos-delay="200">
                     <img src="$/images/icons/checkmark.png" alt="" class="advantage-icon" />
                     <div class="advantage-content">
-                        <div class="advantage-title">{{ $t('why_us.ukrainian_product.title') }}</div>
-                        <div class="advantage-desc">{{ $t('why_us.ukrainian_product.description') }}</div>
+                        <div class="advantage-title">{{ $t('common.why_us.ukrainian_product.title') }}</div>
+                        <div class="advantage-desc">{{ $t('common.why_us.ukrainian_product.description') }}</div>
                     </div>
                 </div>
                 <div class="advantage" data-aos="fade-up" data-aos-delay="300">
                     <img src="$/images/icons/checkmark.png" alt="" class="advantage-icon" />
                     <div class="advantage-content">
-                        <div class="advantage-title">{{ $t('why_us.modern_technologies.title') }}</div>
-                        <div class="advantage-desc">{{ $t('why_us.modern_technologies.description') }}</div>
+                        <div class="advantage-title">{{ $t('common.why_us.modern_technologies.title') }}</div>
+                        <div class="advantage-desc">{{ $t('common.why_us.modern_technologies.description') }}</div>
                     </div>
                 </div>
                 <div class="advantage" data-aos="fade-up" data-aos-delay="400">
                     <img src="$/images/icons/checkmark.png" alt="" class="advantage-icon" />
                     <div class="advantage-content">
-                        <div class="advantage-title">{{ $t('why_us.low_price_quality.title') }}</div>
-                        <div class="advantage-desc">{{ $t('why_us.low_price_quality.description') }}</div>
+                        <div class="advantage-title">{{ $t('common.why_us.low_price_quality.title') }}</div>
+                        <div class="advantage-desc">{{ $t('common.why_us.low_price_quality.description') }}</div>
                     </div>
                 </div>
                 <div class="advantage" data-aos="fade-up" data-aos-delay="500">
                     <img src="$/images/icons/checkmark.png" alt="" class="advantage-icon" />
                     <div class="advantage-content">
-                        <div class="advantage-title">{{ $t('why_us.delivery.title') }}</div>
-                        <div class="advantage-desc">{{ $t('why_us.delivery.description') }}</div>
+                        <div class="advantage-title">{{ $t('common.why_us.delivery.title') }}</div>
+                        <div class="advantage-desc">{{ $t('common.why_us.delivery.description') }}</div>
                     </div>
                 </div>
             </div>
